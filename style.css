@@ -1,0 +1,278 @@
+
+h2 {
+    font-size: 40px;
+    text-shadow: -1px -1px rgb(45, 13, 119), 1px 1px rgb(36, 9, 155), -3px 0 4px #000;
+    font-family:"Segoe print", Arial, Helvetica, sans-serif;
+    color: #5214c5;
+    padding:64px 0 0 0;
+    margin:16px auto;
+    font-weight:lighter;
+    -moz-box-shadow:none;  
+    -webkit-box-shadow: none;  
+    box-shadow:none;  
+    text-align:center;
+    display:block;
+    min-height:100px;
+    min-width:800;
+    max-height:100px;
+    max-width:800px; 
+}
+
+#albumimage {
+position: relative;
+}
+
+button#playButton {
+  background: url('res/play.png');
+  background-size: 25px 25px;
+  height: 25px;
+  width: 25px;
+  border: none;
+  overflow: hidden;
+  position: relative;
+  bottom: 13px;
+}
+
+button#muteButton {
+  background: url('res/speaker.png');
+  background-size: 25px;
+  height: 25px;
+  width: 25px;
+  border: none;
+  overflow: hidden;
+  position: relative;
+  left: 600px;
+  bottom: 33px;
+}
+
+button#previousButton {
+  background: url('res/backward.png');
+  background-size: 25px;
+  height: 25px;
+  width: 25px;
+  border: none;
+  overflow: hidden;
+  position: relative;
+  bottom: 13px;
+}
+
+button#nextButton {
+  background: url('res/forward.png');
+  background-size: 25px;
+  height: 25px;
+  width: 25px;
+  border: none;
+  overflow: hidden;
+  position: relative;
+  bottom: 13px;
+}
+
+#musictitle {
+    width: 100%;
+    font-size: 50px;
+    margin: 30px auto;
+    text-align: center;
+    color: rgb(10, 146, 10);
+    text-shadow: 0px 1px 1px rgb(0, 110, 101),
+                 0px 2px 1px #0e7a6c,
+                 0px 3px 1px rgb(14, 73, 63),
+                 0px 4px 1px #095e2c,
+                 0px 5px 1px #1db149,
+                 0px 6px 1px rgb(16, 151, 106),
+                 0px 7px 1px #777,
+                 0px 8px 3px rgba(100, 100, 100, 0.4),
+                 0px 9px 5px rgba(100, 100, 100, 0.1),
+                 0px 10px 7px rgba(100, 100, 100, 0.15),
+                 0px 11px 9px rgba(100, 100, 100, 0.2),
+                 0px 12px 11px rgba(100, 100, 100, 0.25),
+                 0px 13px 15px rgba(100, 100, 100, 0.3);
+ transition:all .8s ease-in-out;  
+  -o-transition:all .8s ease-in-out;  
+  -moz-transition:all .8s ease-in-out;  
+  -webkit-transition:all .8s ease-in-out;
+}
+
+#artistname {
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+#musicProgress {
+    height: 26px;
+    -webkit-appearance: none;
+    margin: 0px 0;
+    width: 92%;
+  }
+  #musicProgress:focus {
+    outline: none;
+  }
+  #musicProgress::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 14px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #50555C;
+    background: #50555C;
+    border-radius: 14px;
+    border: 0px solid #000000;
+  }
+  #musicProgress::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 0px solid #000000;
+    height: 20px;
+    width: 40px;
+    border-radius: 12px;
+    background: #529DE1;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -3px;
+  }
+  #musicProgress:focus::-webkit-slider-runnable-track {
+    background: #50555C;
+  }
+  #musicProgress::-moz-range-track {
+    width: 100%;
+    height: 14px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #50555C;
+    background: #50555C;
+    border-radius: 14px;
+    border: 0px solid #000000;
+  }
+  #musicProgress::-moz-range-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 0px solid #000000;
+    height: 20px;
+    width: 40px;
+    border-radius: 12px;
+    background: #529DE1;
+    cursor: pointer;
+  }
+  #musicProgress::-ms-track {
+    width: 100%;
+    height: 14px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  #musicProgress::-ms-fill-lower {
+    background: #50555C;
+    border: 0px solid #000000;
+    border-radius: 28px;
+    box-shadow: 1px 1px 1px #50555C;
+  }
+  #musicProgress::-ms-fill-upper {
+    background: #50555C;
+    border: 0px solid #000000;
+    border-radius: 28px;
+    box-shadow: 1px 1px 1px #50555C;
+  }
+  #musicProgress::-ms-thumb {
+    margin-top: 1px;
+    box-shadow: 0px 0px 0px #000000;
+    border: 0px solid #000000;
+    height: 20px;
+    width: 40px;
+    border-radius: 12px;
+    background: #529DE1;
+    cursor: pointer;
+  }
+  #musicProgress:focus::-ms-fill-lower {
+    background: #50555C;
+  }
+  #musicProgress:focus::-ms-fill-upper {
+    background: #50555C;
+  }
+
+  #volumeSlider {
+    height: 25px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+    position: relative;
+    left: 430px;
+  }
+  #volumeSlider:focus {
+    outline: none;
+  }
+  #volumeSlider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px #000000;
+    background: #E396AD;
+    border-radius: 1px;
+    border: 0px solid #000000;
+  }
+  #volumeSlider::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid #DB1832;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: #FF0019;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7px;
+  }
+  #volumeSlider:focus::-webkit-slider-runnable-track {
+    background: #E396AD;
+  }
+  #volumeSlider::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px #000000;
+    background: #E396AD;
+    border-radius: 1px;
+    border: 0px solid #000000;
+  }
+  #volumeSlider::-moz-range-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid #DB1832;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: #FF0019;
+    cursor: pointer;
+  }
+  #volumeSlider::-ms-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  #volumeSlider::-ms-fill-lower {
+    background: #E396AD;
+    border: 0px solid #000000;
+    border-radius: 2px;
+    box-shadow: 0px 0px 0px #000000;
+  }
+  #volumeSlider::-ms-fill-upper {
+    background: #E396AD;
+    border: 0px solid #000000;
+    border-radius: 2px;
+    box-shadow: 0px 0px 0px #000000;
+  }
+  #volumeSlider::-ms-thumb {
+    margin-top: 1px;
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid #DB1832;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: #FF0019;
+    cursor: pointer;
+  }
+  #volumeSlider:focus::-ms-fill-lower {
+    background: #E396AD;
+  }
+  #volumeSlider:focus::-ms-fill-upper {
+    background: #E396AD;
+  }
