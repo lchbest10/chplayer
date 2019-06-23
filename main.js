@@ -76,38 +76,13 @@ function openFileDialog() {
   } , filepath  => {
 
     if (filepath) {
-      // fs.writeFile('path.txt', filepath, function (err, data) {
-      //   if (err) console.log(err);
-      // });
-      //scanFile(filepath)
       var music;
       fs.readFile(String(filepath), (err,data) => {
         if(err) alert(err);
         music = data;
         win.webContents.send('selected-filepath',filepath);
-        win.webContents.send('selected-file',music);
       });
     }
 
   }) 
-}
-//the path argument must be of type string fs.readfile
-function scanFile(filepath) {
-  if(!filepath || filepath[0] == 'undefined') return;
-  console.log(filepath[0])
-  fs.readFile(filepath[0],"utf8", (err,data) => {
-    if(err) console.log(err);
-    var arr = [];
-    if (data.substr(-4) === '.mp3' || data.substr(-4) === '.m4a'
-    || data.substr(-5) === '.webm' || data.substr(-4) === '.wav'
-    || data.substr(-4) === '.aac' || data.substr(-4) === '.ogg'
-    || data.substr(-5) === '.opus') {
-    arr.push(data);
-  }
-  var objToSend = {};
-    objToSend.files = arr;
-    objToSend.path = filepath;
-
-    win.webContents.send('selected-file', objToSend)
-  })  
-}           
+}   

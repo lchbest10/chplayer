@@ -1,8 +1,11 @@
 const electron = require('electron');
+const fs = require('fs');
 const ipc = electron.ipcRenderer;
 const path = require('path');
+const mm = require('musicmetadata');
 
 const musictitle = $('#musictitle');
+const artistname = $('#artistname');
 const duration = $('#duration');
 const musicProgress = $('#musicProgress')[0];
 const volumeSlider = $('#volumeSlider')[0];
@@ -20,11 +23,18 @@ ipc.on('selected-filepath', (event, p) => {
     filepath = p;
     filename = path.parse(filepath + '');
     musictitle.text('[' + filename.base + ']');
-    initSong();
-});
 
-ipc.on('selected-file', (event,song) => {
-   // play(song);
+    var parser = mm(fs.createReadStream(filepath + ''),{duration: true},(err,metadata) => {
+        if(err) throw err;
+        artistname.text('[' + metadata.artist + ']'); 
+        timeLength = metadata.duration;
+        var minute = Math.floor(metadata.duration / 60);
+        var second = Math.floor(metadata.duration - minute * 60);
+        if(minute < 10) minute = '0' + minute;
+        if(second < 10) second = '0' + second; 
+        duration.text(minute + ':' + second);
+    });
+    initSong();
 });
 
 function initSong() {
@@ -38,7 +48,9 @@ function initSong() {
   current_song.addEventListener("timeupdate",function() { seektimeupdate(); });
   current_song.addEventListener("mousemove", function() { seek(); });
   volumeSlider.addEventListener("mousemove", function() { setVolume(); });
-  musicProgress.addEventListener("mousedown", function(event) { seek(event.pageX)});
+  musicProgress.addEventListener("mousedown", function(event) { seeking = true; 
+    seek(event.pageX)});
+  musicProgress.addEventListener("mouseup", function() { seeking = false});
 }
 
 function seek(mx) {
